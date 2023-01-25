@@ -1,16 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-const App = () => {
+import logo from './logo.svg';
+import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Main from './Components/Main';
+import './Components/style.css'
+function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
-        </Routes>
-      </Router>
+     
+      <Main />
     </>
   );
-};
+}
 
 export default App;
