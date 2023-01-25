@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
 import { RiSearch2Line } from "react-icons/ri";
 
 import "./style.css";
@@ -63,7 +63,7 @@ const Card = ({ pokemon, loading }) => {
         ) : (
           pokemon
             .filter((item) => {
-              if (searchInput == "") {
+              if (searchInput === "") {
                 return item;
               } else if (
                 item.name.toLowerCase().includes(searchInput.toLowerCase())
@@ -84,7 +84,7 @@ const Card = ({ pokemon, loading }) => {
                     <img
                       className="card-img-top card-img"
                       src={item.sprites.front_default}
-                      alt="Card image cap"></img>
+                      alt="pokemon"></img>
                     <div className="card-body">
                       <h5 className="card-title poke-name">{item.name}</h5>
                     </div>
