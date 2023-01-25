@@ -12,7 +12,7 @@ const Card = ({ pokemon, loading }) => {
   const [pokeName, setPokeName] = useState("");
   const [pokeHeight, setPokeHeight] = useState("");
   const [pokeWeight, setPokeWeight] = useState("");
-  const [pokeImg, setPokeImg] = useState();
+  const [pokeImg, setPokeImg] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   const openPokeInfo = async (res) => {
@@ -22,6 +22,8 @@ const Card = ({ pokemon, loading }) => {
     setPokeImg(res.sprites.front_default);
     handleShow();
   };
+
+  // console.log(pokeImg);
 
   return (
     <>
@@ -34,7 +36,7 @@ const Card = ({ pokemon, loading }) => {
           <Modal.Title>{pokeName}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="poke-content">
-          <img src={pokeImg} class="img-fluid img-height" />
+          <img src={pokeImg} class="img-fluid img-height" alt={pokeName.name} />
           <p>Height : {pokeHeight}</p>
 
           <p>Weight : {pokeWeight}</p>
